@@ -86,9 +86,9 @@ You may create requests to your REST API using CLI commands. The following param
 
 ## :thumbsup: Special Thanks
 
-Thanks a lot to [ozadi3](https://github.com/ozadi3), I couldn't have this without you!
+Thanks a lot to [Supersonic]((http://www.supersonic.com)!
 
-The module is maintained by [Supersonic](http://www.supersonic.com).
+The module is maintained by [toitzi](https://github.com/toitzi).
 
 ## :clap: Contributing
 
