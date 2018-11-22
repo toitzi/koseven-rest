@@ -42,6 +42,59 @@ The following action functions can be implemented to support each one of the cor
 * `action_update()` - for PUT requests.
 * `action_delete()` - for DELETE requests.
 
+Example Controller:
+
+````
+class Controller_User extends Controller_REST {
+
+	// For GET Requests
+	public function action_index()
+	{
+		// Dummy Code for Documentation
+		$user = User::getByID($this->request->query('id'));
+		if (empty($user)) 
+		{
+			// Notice "404" if no data is passed is default.
+			// Shorthand for $this->rest_output(array(), 404);
+			$this->rest_output();
+		}
+		// Sending other HTTP Status codes is also possible
+		if (!$user->hasAccess())
+		{
+			$this->rest_output(array('error' => 'Not Allowed'), 403);
+		}
+		else
+		{
+			// Rsponse with User Data (Default Status Code: 200)
+			$this->rest_output(array(
+				'name'	   => $user->getName(),
+				'username' => $user->getUsername(),
+				'bio'	   => $user->getBIO()
+			));	
+		}
+	}
+
+	// For POST Requests
+	public function action_create()
+	{
+		// e.G. User creating
+	}
+	
+	// For PUT Requests
+	public function action_update()
+	{
+		// e.G. Update a useres username
+	}
+	
+	// For DELETE Requests
+	public function action_delete()
+	{
+		// e.G. Delete a user
+	}
+
+} 
+````
+
 ### :memo: Models
 
 You can use any model class you want.
