@@ -58,19 +58,22 @@ class Controller_User extends Controller_REST {
 			// Shorthand for $this->rest_output(array(), 404);
 			$this->rest_output();
 		}
-		// Sending other HTTP Status codes is also possible
-		if (!$user->hasAccess())
-		{
-			$this->rest_output(array('error' => 'Not Allowed'), 403);
-		}
 		else
 		{
-			// Rsponse with User Data (Default Status Code: 200)
-			$this->rest_output(array(
-				'name'	   => $user->getName(),
-				'username' => $user->getUsername(),
-				'bio'	   => $user->getBIO()
-			));	
+			// Sending other HTTP Status codes is also possible
+			if (!$user->hasAccess())
+			{
+				$this->rest_output(array('error' => 'Not Allowed'), 403);
+			}
+			else
+			{
+				// Rsponse with User Data (Default Status Code: 200)
+				$this->rest_output(array(
+					'name'	   => $user->getName(),
+					'username' => $user->getUsername(),
+					'bio'	   => $user->getBIO()
+				));	
+			}
 		}
 	}
 
