@@ -67,7 +67,7 @@ class Controller_User extends Controller_REST {
 			}
 			else
 			{
-				// Rsponse with User Data (Default Status Code: 200)
+				// Response with User Data (Default Status Code: 200)
 				$this->rest_output(array(
 					'name'	   => $user->getName(),
 					'username' => $user->getUsername(),
@@ -86,7 +86,7 @@ class Controller_User extends Controller_REST {
 	// For PUT Requests
 	public function action_update()
 	{
-		// e.G. Update a useres username
+		// e.G. Update a users username
 	}
 	
 	// For DELETE Requests
