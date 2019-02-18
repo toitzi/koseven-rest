@@ -123,7 +123,7 @@ The following special query parameters are supported:
 
 * `suppressResponseCodes` - some clients cannot handle HTTP responses different than 200. Passing `suppressResponseCodes=true` will make the response always return `200 OK`, while attaching the real response code as an extra key in the response body. More information here: <https://blog.apigee.com/detail/restful_api_design_tips_for_handling_exceptional_behavior>
 * `method` - some clients cannot set an HTTP method different than GET. For these clients, we support simply passing the method as a query parameter. `method` can simply be set to POST, PUT, DELETE or any other method you'd like to support.
-* `attachement` - you may sometimes like to allow your users to query your API directly from their browser with a direct link to download the data. For these occasions you may add this parameter with a value representing a file name. This will make the module declare a "content-disposition" header that'll make the user's browser open a download window.
+* `attachment` - you may sometimes like to allow your users to query your API directly from their browser with a direct link to download the data. For these occasions you may add this parameter with a value representing a file name. This will make the module declare a "content-disposition" header that'll make the user's browser open a download window.
 
 ## :computer: Command Line
 
