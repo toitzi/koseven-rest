@@ -64,7 +64,7 @@ abstract class Kohana_Controller_REST extends Controller {
         $this->_overwrite_method();
         $method = $this->request->method();
         $action_requested = $this->request->action();
-        if (! $action_requested)
+        if ($action_requested)
         {
             if (! isset($this->_action_map[$method]))
             {
