@@ -21,7 +21,7 @@
  * @copyright  (c) since 2018 Koseven Team
  * @license    https://koseven.ga/LICENSE.md
  */
-abstract class Kohana_Controller_REST extends Controller {
+abstract class KO7_Controller_REST extends Controller {
 
     /**
      * REST types
@@ -102,7 +102,7 @@ abstract class Kohana_Controller_REST extends Controller {
 
     /**
      * Sends a 405 "Method Not Allowed" response and a list of allowed actions.
-     * @throws Kohana_Exception
+     * @throws KO7_Exception
      */
     public function action_invalid()
     {
@@ -114,7 +114,7 @@ abstract class Kohana_Controller_REST extends Controller {
      * Handling of output data set in action methods with $this->rest_output($data, $code).
      * @param array $data           Response Data
      * @param int $code             Response Code
-     * @throws Kohana_Exception
+     * @throws KO7_Exception
      */
     protected function rest_output(array $data = array(), int $code = 200)
     {
@@ -156,7 +156,7 @@ abstract class Kohana_Controller_REST extends Controller {
         {
             // Report an error.
             $this->response->status(500);
-            throw new Kohana_Exception('Unknown format method requested');
+            throw new KO7_Exception('Unknown format method requested');
         }
     }
 
@@ -174,12 +174,12 @@ abstract class Kohana_Controller_REST extends Controller {
      * Format the output data to XML with php-xml
      * @param array $data           Response Data
      * @return string               XML
-     * @throws Kohana_Exception
+     * @throws KO7_Exception
      */
     private function _format_xml(array $data = array()) : string
     {
         if (!extension_loaded('xml')) {
-            throw new Kohana_Exception('PHP XML Module not loaded');
+            throw new KO7_Exception('PHP XML Module not loaded');
         }
         $xml = new SimpleXMLElement('<root/>');
         $xml = $xml->addChild('data');
@@ -193,7 +193,7 @@ abstract class Kohana_Controller_REST extends Controller {
      * Call a View to format the data as HTML.
      * @param array $data           Response Data
      * @return string               HTML (if non existent, empty string)
-     * @throws Kohana_Exception
+     * @throws KO7_Exception
      */
     private function _format_html(array $data = array()) : string
     {
@@ -214,7 +214,7 @@ abstract class Kohana_Controller_REST extends Controller {
         }
 
         // e.G. Controller: Welcome, check views/Welcome.php else views/welcome/{index,update,create,delete}.php
-        if (Kohana::find_file('views', $view_name) === FALSE) {
+        if (KO7::find_file('views', $view_name) === FALSE) {
             $view_name .= DIRECTORY_SEPARATOR .$this->request->action();
         }
         try

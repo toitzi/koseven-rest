@@ -1,3 +1,3 @@
 <?php
 
-class Controller_REST extends Kohana_Controller_REST {}
+class Controller_REST extends KO7_Controller_REST {}

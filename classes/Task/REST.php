@@ -9,7 +9,7 @@
  * @copyright  (c) since 2018 Koseven Team
  * @license    https://koseven.ga/LICENSE.md
  */
-class Kohana_Task_REST extends Minion_Task {
+class KO7_Task_REST extends Minion_Task {
 
     /**
      * The list of options this task accepts and their default values.
