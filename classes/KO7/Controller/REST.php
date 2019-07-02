@@ -63,18 +63,16 @@ abstract class KO7_Controller_REST extends Controller {
     {
         $this->_overwrite_method();
         $method = $this->request->method();
-        $action_requested = $this->request->action();
-        if (! $action_requested)
+
+        if (! isset($this->_action_map[$method]))
         {
-            if (! isset($this->_action_map[$method]))
-            {
-                $this->request->action('invalid');
-            }
-            else
-            {
-                $this->request->action($this->_action_map[$method]);
-            }
+            $this->request->action('invalid');
         }
+        else
+        {
+            $this->request->action($this->_action_map[$method]);
+        }
+
         $this->_init_params();
 
         // Get output format from route file extension.
