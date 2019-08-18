@@ -1,5 +1,9 @@
-# Koseven REST Module
+# [DEPRECATED] Koseven REST Module
 ![License](https://img.shields.io/badge/license-BSD--3--Clause-green.svg)
+
+
+## Warning [DEPRECATED]!
+_This module will be integrated in Koseven Core Framework v. 4.0 and therefore no longer be maintained here. Please use the integrated one which comes shipped with the Framework (Don't worry it is very very similiar and based on this one)_
 
 This is a simple REST module for Koseven, which started as a port 
 from Kohana's core REST module in 3.1.1.1 and SupersonicAds's REST module.
